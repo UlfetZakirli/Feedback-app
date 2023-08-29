@@ -1,18 +1,32 @@
 import React from 'react'
-import PorpTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
-const Header = ({ text }) => {
+const Header = ({ text, bgColor, textColor }) => {
+
+    const headerStyle = {
+        backgroundColor: bgColor,
+        color: textColor
+    }
+
     return (
-        <div>{text}</div>
+        <header style={headerStyle}>
+            <div>
+                <h2>{text}</h2>
+            </div>
+        </header>
     )
 }
 
 Header.defaultProps = {
-    text: 'Header page'
+    text: 'Header page',
+    bgColor: 'rgba(0,0,0,0.4)',
+    textColor: '#ff6a95'
 }
 
 Header.propTypes = {
-    text: PorpTypes.string.isRequired
+    text: PropTypes.string.isRequired,
+    bgColor: PropTypes.string,
+    textColor: PropTypes.string
 }
 
 export default Header
