@@ -2,7 +2,7 @@ import React from 'react'
 import FeedbackItem from './FeedbackItem'
 import PropTypes from 'prop-types'
 
-const FeedbackList = ({ feedbacks }) => {
+const FeedbackList = ({ feedbacks, handleDelete }) => {
     if (!feedbacks || !feedbacks.length) {
         return <h1>No feedbacks yet</h1>
     }
@@ -10,7 +10,7 @@ const FeedbackList = ({ feedbacks }) => {
     return (
         <div>
             {feedbacks.map((feedback) => (
-                <FeedbackItem key={feedback.id} feedback={feedback} />
+                <FeedbackItem key={feedback.id} feedback={feedback} handleDelete={handleDelete} />
             ))}
         </div>
     )
