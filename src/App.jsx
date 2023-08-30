@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Header from './components/Header'
 import FeedbackData from './data/FeedbackData'
 import FeedbackList from './components/FeedbackList'
-import Card from './components/shared/Card'
 import FeedbackStats from './components/FeedbackStats'
 import FeedbackForm from './components/FeedbackForm'
 
