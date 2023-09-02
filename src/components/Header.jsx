@@ -10,7 +10,7 @@ const Header = ({ text, bgColor, textColor }) => {
 
     return (
         <header style={headerStyle}>
-            <div>
+            <div className='container'>
                 <h2>{text}</h2>
             </div>
         </header>
@@ -18,7 +18,7 @@ const Header = ({ text, bgColor, textColor }) => {
 }
 
 Header.defaultProps = {
-    text: 'Header page',
+    text: 'Feedback UI',
     bgColor: 'rgba(0,0,0,0.4)',
     textColor: '#ff6a95'
 }
