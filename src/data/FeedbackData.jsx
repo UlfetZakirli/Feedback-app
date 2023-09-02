@@ -1,18 +1,18 @@
- const FeedbackData = [
+const FeedbackData = [
     {
         id: 1,
-        rating: 10,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.',
+        rating: 1,
+        text: 'Lorem 1'
     },
     {
         id: 2,
-        rating: 9,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.',
+        rating: 3,
+        text:'Lorem 2'
     },
     {
         id: 3,
         rating: 8,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. consequuntur vel vitae commodi alias voluptatem est voluptatum ipsa quae.',
+        text: 'Lorem 3',
     },
 ]
 

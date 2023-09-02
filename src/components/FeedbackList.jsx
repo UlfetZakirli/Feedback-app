@@ -6,7 +6,7 @@ import FeedbackContext from '../context/FeedbackContext'
 
 const FeedbackList = () => {
     const { feedbacks } = useContext(FeedbackContext)
-    console.log(feedbacks);
+ 
     if (!feedbacks || !feedbacks.length) {
         return <h1>No feedbacks yet</h1>
     }
