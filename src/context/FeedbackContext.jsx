@@ -1,8 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react'
-import { v4 as uuid } from 'uuid'
+
 const FeedbackContext = createContext()
 
-const BASE_URL = 'http://localhost:5000'
+const BASE_URL = 'http://localhost:5000/feedbacks'
 
 export const FeedbackProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true)
@@ -17,7 +17,7 @@ export const FeedbackProvider = ({ children }) => {
     }, [])
 
     const fetchFeedbacks = async () => {
-        const res = await fetch(`${BASE_URL}/feedbacks?_sort=id&_order=desc`)
+        const res = await fetch(`${BASE_URL}/?_sort=id&_order=desc`)
         const data = await res.json()
         setFeedbacks(data)
         setIsLoading(false)
@@ -25,7 +25,7 @@ export const FeedbackProvider = ({ children }) => {
 
 
     const addFeedback = async (newFeedback) => {
-        const res = await fetch(`${BASE_URL}/feedbacks`, {
+        const res = await fetch(`${BASE_URL}`, {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json'
@@ -37,9 +37,13 @@ export const FeedbackProvider = ({ children }) => {
     }
 
 
-    const deleteFeedback = (id) => {
+    const deleteFeedback = async (id) => {
         if (window.confirm('Are you sure to delete this feedback?')) {
+            await fetch(`${BASE_URL}/${id}`, {
+                method: 'DELETE',
+            })
             setFeedbacks(feedbacks.filter((feedback) => feedback.id !== id))
+
         }
     }
 
@@ -50,8 +54,17 @@ export const FeedbackProvider = ({ children }) => {
         })
     }
 
-    const updateFeedback = (id, updatedFeedback) => {
-        setFeedbacks(feedbacks.map((item) => item.id === id ? { ...item, ...updatedFeedback } : item))
+    const updateFeedback = async (id, updatedFeedback) => {
+        const res = await fetch(`${BASE_URL}/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedFeedback)
+        })
+        const data = await res.json()
+
+        setFeedbacks(feedbacks.map((item) => item.id === id ? { ...item, ...data } : item))
 
     }
 

@@ -16,29 +16,18 @@
       "rating": 3
     },
     {
-      "text": "one feedbacks ",
-      "rating": 10,
+      "text": "one feedbacks  ",
+      "rating": 4,
       "id": 4
     },
     {
-      "text": "mxxxxxxxxxxxxxxxx",
-      "rating": 10,
-      "id": 5
-    },
-    {
-      "text": "sssssssssssssssssssssssssssss",
-      "rating": 2,
-      "id": 6
-    },
-    {
       "text": "ulfat zakilri rovshen",
-      "rating": 9,
-      "id": 7
-    },
-    {
-      "text": "test is one ",
-      "rating": 7,
-      "id": 8
+      "rating": 5,
+      "id": 7,
+      "updatedFeedback": {
+        "text": "ulfat zakilri rovshen 3",
+        "rating": 9
+      }
     }
   ]
 }
